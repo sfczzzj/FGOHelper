@@ -1,0 +1,57 @@
+import basefunc
+import FGOFunc
+import AntiCheck
+import time
+
+basefunc.GetBaseRect("命运-冠位指定 - MuMu模拟器")
+
+FGOFunc.FGO_WaitFor_StageSelect()
+FGOFunc.FGO_Action_SelectDefaultStage()
+FGOFunc.FGO_WaitFor_AssistantSelect()
+FGOFunc.FGO_Action_SelectAssisant("PreferAssistant.png")
+FGOFunc.FGO_WaitFor_TeamConfrim()
+FGOFunc.FGO_Action_ConfirmTeam()
+FGOFunc.FGO_WaitFor_Attack()
+#第一回合
+FGOFunc.FGO_Action_UseSkill(2, 1, 1)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_UseSkill(3, 1, 1)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_UseMasterSkill(3, 1)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_Attck()
+FGOFunc.FGO_Action_SelectNoble(1)
+FGOFunc.FGO_Action_SelectCard(1)
+FGOFunc.FGO_Action_SelectCard(2)
+FGOFunc.FGO_WaitFor_Attack()
+#第二回合
+FGOFunc.FGO_Action_UseSkill(1, 3, None)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_UseSkill(2, 3, 1)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_Attck()
+FGOFunc.FGO_Action_SelectNoble(1)
+FGOFunc.FGO_Action_SelectCard(1)
+FGOFunc.FGO_Action_SelectCard(2)
+FGOFunc.FGO_WaitFor_Attack()
+#第三回合
+FGOFunc.FGO_Action_UseSkill(2, 2, None)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_UseSkill(3, 2, None)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_UseSkill(3, 3, 1)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_UseMasterSkill(1, 1)
+FGOFunc.FGO_WaitFor_Attack()
+FGOFunc.FGO_Action_Attck()
+FGOFunc.FGO_Action_SelectNoble(1)
+FGOFunc.FGO_Action_SelectCard(1)
+FGOFunc.FGO_Action_SelectCard(2)
+#回合结束
+FGOFunc.FGO_WaitFor_BattleEnd()
+time.sleep(2.5)
+AntiCheck.RangeClick(600, 400, 300)
+time.sleep(2.5)
+AntiCheck.RangeClick(600, 400, 300)
+time.sleep(0.5)
+FGOFunc.FGO_Action_FinishBattle()
